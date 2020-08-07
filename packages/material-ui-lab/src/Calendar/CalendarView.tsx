@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { MonthSelection } from './MonthSelection';
+import { MonthPicker } from '../MonthPicker/MonthPicker';
 import { DatePickerView } from '../DatePicker';
 import { useCalendarState } from './useCalendarState';
 import { useUtils } from '../internal/pickers/_shared/hooks/useUtils';
@@ -10,10 +10,13 @@ import { PickerOnChangeFn } from '../internal/pickers/_shared/hooks/useViews';
 import { useDefaultProps } from '../internal/pickers/_shared/withDefaultProps';
 import { DAY_SIZE, DAY_MARGIN } from '../internal/pickers/constants/dimensions';
 import { CalendarHeader, ExportedCalendarHeaderProps } from './CalendarHeader';
-import { YearSelection, ExportedYearSelectionProps } from './YearSelection';
+import { YearPicker, ExportedYearSelectionProps } from '../YearPicker/YearPicker';
 import { defaultMinDate, defaultMaxDate } from '../internal/pickers/constants/prop-types';
 import { IsStaticVariantContext } from '../internal/pickers/wrappers/WrapperVariantContext';
-import { DateValidationProps, findClosestEnabledDate } from '../internal/pickers/_helpers/date-utils';
+import {
+  DateValidationProps,
+  findClosestEnabledDate,
+} from '../internal/pickers/_helpers/date-utils';
 
 export interface CalendarViewProps<TDate>
   extends DateValidationProps<TDate>,
@@ -58,7 +61,7 @@ export const useStyles = makeStyles(
       height: '100%',
     },
   },
-  muiComponentConfig
+  muiComponentConfig,
 );
 
 export const defaultReduceAnimations =
@@ -153,7 +156,7 @@ export function CalendarView<TDate>(props: CalendarViewProps<TDate>) {
       >
         <div>
           {view === 'year' && (
-            <YearSelection
+            <YearPicker
               {...other}
               date={date}
               onChange={onChange}
@@ -168,7 +171,7 @@ export function CalendarView<TDate>(props: CalendarViewProps<TDate>) {
             />
           )}
           {view === 'month' && (
-            <MonthSelection
+            <MonthPicker
               {...other}
               date={date}
               onChange={onChange}

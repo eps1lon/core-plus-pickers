@@ -2,7 +2,7 @@ import * as React from 'react';
 import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Day, DayProps } from './Day';
+import { Day, DayProps } from '../PickerDay/Day';
 import { useUtils, useNow } from '../internal/pickers/_shared/hooks/useUtils';
 import { PickerOnChangeFn } from '../internal/pickers/_shared/hooks/useViews';
 import { DAY_SIZE, DAY_MARGIN } from '../internal/pickers/constants/dimensions';

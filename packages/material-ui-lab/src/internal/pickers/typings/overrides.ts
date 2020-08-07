@@ -1,23 +1,23 @@
 // eslint-disable-next-line no-restricted-imports
 import { StyleRules, StyleRulesCallback } from '@material-ui/core/styles/withStyles';
-import { useStyles as DayStyles } from '../../../Calendar/Day';
+import { useStyles as DayStyles } from '../../../PickerDay/Day';
 import { useStyles as ClockStyles } from '../../../Clock/Clock';
 import { useStyles as MuiBasePickerStyles } from '../Picker/Picker';
 import { useStyles as CalendarStyles } from '../../../Calendar/Calendar';
-import { useStyles as MuiPickersYearStyles } from '../../../Calendar/Year';
+import { useStyles as MuiPickersYearStyles } from '../../../YearPicker/Year';
 import { styles as ClockPointerStyles } from '../../../Clock/ClockPointer';
 import { useStyles as ToolbarButtonStyles } from '../_shared/ToolbarButton';
 import { useStyles as PickerToolbarStyles } from '../_shared/PickerToolbar';
 import { useStyles as ClockNumberStyles } from '../../../Clock/ClockNumber';
-import { useStyles as MuiPickersMonthStyles } from '../../../Calendar/Month';
+import { useStyles as MuiPickersMonthStyles } from '../../../MonthPicker/Month';
 import { useStyles as CalendarViewStyles } from '../../../Calendar/CalendarView';
 import { useStyles as MuiPickersToolbarTextStyles } from '../_shared/ToolbarText';
 import { useStyles as DatePickerRootStyles } from '../../../DatePicker/DatePickerToolbar';
 import { useStyles as CalendarHeaderStyles } from '../../../Calendar/CalendarHeader';
 import { useStyles as TimePickerToolbarStyles } from '../../../TimePicker/TimePickerToolbar';
 import { useStyles as SlideTransitionStyles } from '../../../Calendar/SlideTransition';
-import { useStyles as MuiPickersYearSelectionStyles } from '../../../Calendar/YearSelection';
-import { useStyles as MuiPickersMonthSelectionStyles } from '../../../Calendar/MonthSelection';
+import { useStyles as MuiPickersYearSelectionStyles } from '../../../YearPicker/YearPicker';
+import { useStyles as MuiPickersMonthSelectionStyles } from '../../../MonthPicker/MonthPicker';
 
 type StylesHook<C extends string> = (props?: any) => Record<C, string>;
 
@@ -51,7 +51,9 @@ export interface MuiPickersComponentsToClassName {
   MuiPickersDatePickerRoot: Classes<typeof DatePickerRootStyles>;
   MuiPickersBasePicker: Classes<typeof MuiBasePickerStyles>;
   MuiPickersModalDialog: Classes<typeof import('../_shared/PickersModalDialog').useStyles>;
-  MuiDateTimePickerTabs: Classes<typeof import('../../../DateTimePicker/DateTimePickerTabs').useStyles>;
+  MuiDateTimePickerTabs: Classes<
+    typeof import('../../../DateTimePicker/DateTimePickerTabs').useStyles
+  >;
   MuiDateTimePickerToolbar: Classes<
     typeof import('../../../DateTimePicker/DateTimePickerToolbar').useStyles
   >;
@@ -63,6 +65,8 @@ export interface MuiPickersComponentsToClassName {
   MuiPickersDateRangePickerInput: Classes<
     typeof import('../../../DateRangePicker/DateRangePickerInput').useStyles
   >;
-  MuiPickersCalendarSkeleton: Classes<typeof import('../CalendarSkeleton').useStyles>;
+  MuiPickersCalendarSkeleton: Classes<
+    typeof import('../../../CalendarSkeleton/CalendarSkeleton').useStyles
+  >;
   MuiPickersPopper: Classes<typeof import('../_shared/PickersPopper').useStyles>;
 }

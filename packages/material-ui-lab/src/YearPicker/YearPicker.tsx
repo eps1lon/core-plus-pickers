@@ -21,7 +21,7 @@ export interface ExportedYearSelectionProps<TDate> {
   shouldDisableYear?: (day: unknown) => boolean;
 }
 
-export interface YearSelectionProps<TDate> extends ExportedYearSelectionProps<TDate> {
+export interface YearPickerProps<TDate> extends ExportedYearSelectionProps<TDate> {
   allowKeyboardControl?: boolean;
   changeFocusedDay: (day: TDate) => void;
   date: TDate;
@@ -47,7 +47,7 @@ export const useStyles = makeStyles(
   { name: 'MuiPickersYearSelection' }
 );
 
-export function YearSelection<TDate>({
+export function YearPicker<TDate>({
   allowKeyboardControl,
   changeFocusedDay,
   date: __dateOrNull,
@@ -59,7 +59,7 @@ export function YearSelection<TDate>({
   onChange,
   onYearChange,
   shouldDisableYear,
-}: YearSelectionProps<TDate>) {
+}: YearPickerProps<TDate>) {
   const now = useNow<TDate>();
   const theme = useTheme();
   const utils = useUtils<TDate>();

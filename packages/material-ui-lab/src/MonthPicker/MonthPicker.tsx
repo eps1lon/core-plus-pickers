@@ -26,7 +26,7 @@ export const useStyles = makeStyles(
   { name: 'MuiPickersMonthSelection' }
 );
 
-export function MonthSelection<TDate>({
+export function MonthPicker<TDate>({
   date,
   disableFuture,
   disablePast,
