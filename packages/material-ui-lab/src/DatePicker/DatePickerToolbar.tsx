@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import PickerToolbar from '../internal/pickers/_shared/PickerToolbar';
-import { DatePickerView } from './DatePicker';
+import type { DatePickerView } from './DatePicker';
 import { useUtils } from '../internal/pickers/_shared/hooks/useUtils';
 import { withDefaultProps } from '../internal/pickers/_shared/withDefaultProps';
 import { ToolbarComponentProps } from '../internal/pickers/Picker/SharedPickerProps';

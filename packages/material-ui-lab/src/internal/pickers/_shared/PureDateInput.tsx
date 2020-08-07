@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { TextFieldProps } from '@material-ui/core/TextField';
+import { TextFieldProps as _MuiTextFieldProps } from '@material-ui/core/TextField';
 import { IconButtonProps } from '@material-ui/core/IconButton';
 import { InputAdornmentProps } from '@material-ui/core/InputAdornment';
 import { onSpaceOrEnter } from '../_helpers/utils';
@@ -8,7 +8,7 @@ import { ParsableDate } from '../constants/prop-types';
 import { useUtils, MuiPickersAdapter } from './hooks/useUtils';
 import { getDisplayDate, getTextFieldAriaText } from '../_helpers/text-field-helper';
 
-export type MuiTextFieldProps = TextFieldProps | Omit<TextFieldProps, 'variant'>;
+export type MuiTextFieldProps = _MuiTextFieldProps | Omit<_MuiTextFieldProps, 'variant'>;
 
 export interface DateInputProps<TInputValue = ParsableDate<unknown>, TDateValue = unknown> {
   open: boolean;
@@ -19,8 +19,8 @@ export interface DateInputProps<TInputValue = ParsableDate<unknown>, TDateValue 
   readOnly?: boolean;
   disabled?: boolean;
   validationError?: boolean;
-  label?: TextFieldProps['label'];
-  InputProps?: TextFieldProps['InputProps'];
+  label?: MuiTextFieldProps['label'];
+  InputProps?: MuiTextFieldProps['InputProps'];
   TextFieldProps?: Partial<MuiTextFieldProps>;
   // lib/src/wrappers/DesktopPopperWrapper.tsx:87
   onBlur?: () => void;

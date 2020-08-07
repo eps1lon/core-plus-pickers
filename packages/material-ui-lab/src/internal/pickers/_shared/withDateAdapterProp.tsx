@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MuiPickersAdapter } from './hooks/useUtils';
-import { MuiPickersAdapterContext } from '../LocalizationProvider';
+import { MuiPickersAdapterContext } from '../../../LocalizationProvider/LocalizationProvider';
 
 export interface WithDateAdapterProps<TDate> {
   /**

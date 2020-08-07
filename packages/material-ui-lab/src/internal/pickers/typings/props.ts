@@ -1,6 +1,5 @@
 import { PickerProps } from '../Picker/Picker';
-import { CalendarSkeletonProps } from '../CalendarSkeleton';
-import { DateRangeDelimiterProps } from '../../../DateRangePicker/DateRangeDelimiter';
+import { CalendarSkeletonProps } from '../CalendarSkeleton/CalendarSkeleton';
 import {
   ToolbarComponentProps,
   LocalizationProviderProps,
@@ -25,7 +24,7 @@ import {
   MobileDateRangePickerProps,
   DesktopDateRangePickerProps,
   StaticDateRangePickerProps,
-} from '../../..';
+} from '../../../index';
 
 export interface MuiPickersComponentsPropsList {
   MuiPickersDay: PickersDayProps<unknown>;

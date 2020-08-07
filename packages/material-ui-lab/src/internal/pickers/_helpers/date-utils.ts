@@ -1,9 +1,8 @@
 import { arrayIncludes } from './utils';
 import { ParsableDate } from '../constants/prop-types';
-import { BasePickerProps } from '../typings/BasePicker';
-import { DatePickerView } from '../../../DatePicker/DatePicker';
-import { MuiPickersAdapter } from '../_shared/hooks/useUtils';
-import { DateRange, RangeInput } from '../../../DateRangePicker/RangeTypes';
+import type { BasePickerProps } from '../typings/BasePicker';
+import type { DatePickerView } from '../../../DatePicker/DatePicker';
+import type { MuiPickersAdapter } from '../_shared/hooks/useUtils';
 
 interface FindClosestDateParams<TDate> {
   date: TDate;
@@ -84,7 +83,7 @@ export const isYearAndMonthViews = (views: readonly DatePickerView[]) =>
 
 export const getFormatAndMaskByViews = (
   views: readonly DatePickerView[],
-  utils: MuiPickersAdapter
+  utils: MuiPickersAdapter,
 ) => {
   if (isYearOnlyView(views)) {
     return {
@@ -108,7 +107,7 @@ export const getFormatAndMaskByViews = (
 
 export function parsePickerInputValue(
   utils: MuiPickersAdapter,
-  { value }: BasePickerProps
+  { value }: BasePickerProps,
 ): unknown | null {
   const parsedValue = utils.date(value);
 
@@ -117,16 +116,16 @@ export function parsePickerInputValue(
 
 export function parseRangeInputValue(
   utils: MuiPickersAdapter,
-  { value = [null, null] }: BasePickerProps<RangeInput, DateRange>
+  { value = [null, null] }: BasePickerProps<RangeInput, DateRange>,
 ) {
   return value.map((date) =>
-    !utils.isValid(date) || date === null ? null : utils.startOfDay(utils.date(date))
+    !utils.isValid(date) || date === null ? null : utils.startOfDay(utils.date(date)),
   ) as DateRange;
 }
 
 export const isRangeValid = (
   utils: MuiPickersAdapter,
-  range: DateRange | null
+  range: DateRange | null,
 ): range is DateRange => {
   return Boolean(range && range[0] && range[1] && utils.isBefore(range[0], range[1]));
 };
@@ -177,7 +176,7 @@ export interface DateValidationProps<TDate> {
 export const validateDate = <TDate>(
   utils: MuiPickersAdapter,
   value: TDate | ParsableDate,
-  { minDate, maxDate, disableFuture, shouldDisableDate, disablePast }: DateValidationProps<TDate>
+  { minDate, maxDate, disableFuture, shouldDisableDate, disablePast }: DateValidationProps<TDate>,
 ) => {
   const now = utils.date();
   const date = utils.date(value);
@@ -216,33 +215,5 @@ type DateRangeValidationErrorValue = DateValidationError | 'invalidRange' | null
 
 export type DateRangeValidationError = [
   DateRangeValidationErrorValue,
-  DateRangeValidationErrorValue
+  DateRangeValidationErrorValue,
 ];
-
-export const validateDateRange = <TDate>(
-  utils: MuiPickersAdapter<TDate>,
-  value: RangeInput<TDate>,
-  dateValidationProps: DateValidationProps<TDate>
-): [DateRangeValidationErrorValue, DateRangeValidationErrorValue] => {
-  const [start, end] = value;
-
-  // for partial input
-  if (start === null || end === null) {
-    return [null, null];
-  }
-
-  const dateValidations = [
-    validateDate(utils, start, dateValidationProps),
-    validateDate(utils, end, dateValidationProps),
-  ] as [DateRangeValidationErrorValue, DateRangeValidationErrorValue];
-
-  if (dateValidations[0] || dateValidations[1]) {
-    return dateValidations;
-  }
-
-  if (!isRangeValid(utils, [utils.date(start), utils.date(end)])) {
-    return ['invalidRange', 'invalidRange'];
-  }
-
-  return [null, null];
-};

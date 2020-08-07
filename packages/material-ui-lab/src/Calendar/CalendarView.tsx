@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { MonthPicker } from '../MonthPicker/MonthPicker';
-import { DatePickerView } from '../DatePicker';
+import type { DatePickerView } from '../DatePicker';
 import { useCalendarState } from './useCalendarState';
 import { useUtils } from '../internal/pickers/_shared/hooks/useUtils';
 import { FadeTransitionGroup } from './FadeTransitionGroup';
@@ -13,10 +13,8 @@ import { CalendarHeader, ExportedCalendarHeaderProps } from './CalendarHeader';
 import { YearPicker, ExportedYearSelectionProps } from '../YearPicker/YearPicker';
 import { defaultMinDate, defaultMaxDate } from '../internal/pickers/constants/prop-types';
 import { IsStaticVariantContext } from '../internal/pickers/wrappers/WrapperVariantContext';
-import {
-  DateValidationProps,
-  findClosestEnabledDate,
-} from '../internal/pickers/_helpers/date-utils';
+import { findClosestEnabledDate } from '../internal/pickers/_helpers/date-utils';
+import type { DateValidationProps } from '../internal/pickers/_helpers/date-utils';
 
 export interface CalendarViewProps<TDate>
   extends DateValidationProps<TDate>,
@@ -200,3 +198,5 @@ export function CalendarView<TDate>(props: CalendarViewProps<TDate>) {
     </React.Fragment>
   );
 }
+
+export default CalendarView;

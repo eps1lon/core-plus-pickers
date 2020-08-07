@@ -44,7 +44,7 @@ async function run(argv) {
     '--config-file',
     babelConfigPath,
     '--extensions',
-    '".js,.ts"',
+    '".js,.ts,.tsx"',
     srcDir,
     '--out-dir',
     outDir,

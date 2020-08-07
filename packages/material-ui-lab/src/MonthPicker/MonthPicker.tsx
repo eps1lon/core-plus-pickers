@@ -4,13 +4,13 @@ import { Month } from './Month';
 import { useUtils, useNow } from '../internal/pickers/_shared/hooks/useUtils';
 import { PickerOnChangeFn } from '../internal/pickers/_shared/hooks/useViews';
 
-export interface MonthSelectionProps<TDate> {
+export interface MonthPickerProps<TDate> {
   date: TDate | null;
   minDate: TDate;
   maxDate: TDate;
   onChange: PickerOnChangeFn<TDate>;
-  disablePast?: boolean | null | undefined;
-  disableFuture?: boolean | null | undefined;
+  disablePast?: boolean | null;
+  disableFuture?: boolean | null;
   onMonthChange?: (date: TDate) => void | Promise<void>;
 }
 
@@ -34,7 +34,7 @@ export function MonthPicker<TDate>({
   minDate,
   onChange,
   onMonthChange,
-}: MonthSelectionProps<TDate>) {
+}: MonthPickerProps<TDate>) {
   const utils = useUtils<TDate>();
   const now = useNow<TDate>();
   const classes = useStyles();

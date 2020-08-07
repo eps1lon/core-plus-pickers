@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { WrapperProps } from './Wrapper';
-import { StaticWrapperProps } from './StaticWrapper';
+import type { WrapperProps } from './Wrapper';
+import type { StaticWrapperProps } from './StaticWrapper';
 import { InnerMobileWrapperProps } from './MobileWrapper';
-import { InnerDesktopWrapperProps } from './DesktopWrapper';
+import type { InnerDesktopWrapperProps } from './DesktopWrapper';
 import { WrapperVariantContext } from './WrapperVariantContext';
 import { KeyboardDateInput } from '../_shared/KeyboardDateInput';
 import { executeInTheNextEventLoopTick } from '../_helpers/utils';

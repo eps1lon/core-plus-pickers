@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { useViews } from '../_shared/hooks/useViews';
 import { ClockView } from '../../../Clock/ClockView';
-import { DateTimePickerView } from '../../../DateTimePicker';
+import type { DateTimePickerView } from '../../../DateTimePicker';
 import { BasePickerProps } from '../typings/BasePicker';
-import { DatePickerView } from '../../../DatePicker/DatePicker';
+import type { DatePickerView } from '../../../DatePicker/DatePicker';
 import { CalendarView } from '../../../Calendar/CalendarView';
 import { withDefaultProps } from '../_shared/withDefaultProps';
 import { KeyboardDateInput } from '../_shared/KeyboardDateInput';
@@ -60,7 +60,7 @@ export const useStyles = makeStyles(
       padding: '0 8px',
     },
   },
-  muiComponentConfig
+  muiComponentConfig,
 );
 
 const MobileKeyboardTextFieldProps = { fullWidth: true };
@@ -93,10 +93,10 @@ function Picker({
     typeof showToolbar === 'undefined' ? wrapperVariant !== 'desktop' : showToolbar;
 
   const handleDateChange = React.useCallback(
-    (date: unknown, selectionState?: PickerSelectionState) => {
-      onDateChange(date, wrapperVariant, selectionState);
+    (newDate: unknown, selectionState?: PickerSelectionState) => {
+      onDateChange(newDate, wrapperVariant, selectionState);
     },
-    [onDateChange, wrapperVariant]
+    [onDateChange, wrapperVariant],
   );
 
   const { openView, nextView, previousView, setOpenView, handleChangeAndOpenNext } = useViews({

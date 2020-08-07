@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useIsomorphicEffect } from './useKeyDown';
 import { arrayIncludes } from '../../_helpers/utils';
-import { DateTimePickerView } from '../../../../DateTimePicker';
-import { BasePickerProps } from '../../typings/BasePicker';
+import type { DateTimePickerView } from '../../../../DateTimePicker';
+import type { BasePickerProps } from '../../typings/BasePicker';
 
 const getOrientation = () => {
   if (typeof window === 'undefined') {

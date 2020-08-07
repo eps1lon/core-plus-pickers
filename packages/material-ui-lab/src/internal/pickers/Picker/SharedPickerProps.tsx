@@ -1,12 +1,12 @@
-import { DateTimePickerView } from '../../../DateTimePicker';
-import { BasePickerProps } from '../typings/BasePicker';
-import { PickerOnChangeFn } from '../_shared/hooks/useViews';
-import { ExportedDateInputProps } from '../_shared/PureDateInput';
-import { ExportedClockViewProps } from '../../../Clock/ClockView';
-import { WithDateAdapterProps } from '../_shared/withDateAdapterProp';
-import { PickerSelectionState } from '../_shared/hooks/usePickerState';
-import { DateInputPropsLike, WrapperVariant } from '../wrappers/Wrapper';
-import { ExportedCalendarViewProps } from '../../../Calendar/CalendarView';
+import type { DateTimePickerView } from '../../../DateTimePicker';
+import type { BasePickerProps } from '../typings/BasePicker';
+import type { PickerOnChangeFn } from '../_shared/hooks/useViews';
+import type { ExportedDateInputProps } from '../_shared/PureDateInput';
+import type { ExportedClockViewProps } from '../../../Clock/ClockView';
+import type { WithDateAdapterProps } from '../_shared/withDateAdapterProp';
+import type { PickerSelectionState } from '../_shared/hooks/usePickerState';
+import type { DateInputPropsLike, WrapperVariant } from '../wrappers/Wrapper';
+import type { ExportedCalendarViewProps } from '../../../Calendar/CalendarView';
 
 export type AnyPickerView = DateTimePickerView;
 
