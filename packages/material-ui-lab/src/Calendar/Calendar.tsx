@@ -241,5 +241,3 @@ export function Calendar<TDate>(props: CalendarProps<TDate>) {
     </React.Fragment>
   );
 }
-
-Calendar.displayName = 'Calendar';
