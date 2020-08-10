@@ -21,7 +21,7 @@ export interface ExportedCalendarProps<TDate>
    */
   onChange: PickerOnChangeFn<TDate>;
   /**
-   * Custom renderer for day. Check [DayComponentProps api](https://material-ui-pickers.dev/api/Day) @DateIOType.
+   * Custom renderer for day. Check [PickersDay API](https://material-ui.com/api/pickers-day) @DateIOType.
    */
   renderDay?: (
     day: TDate,
