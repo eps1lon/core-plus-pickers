@@ -203,7 +203,6 @@ export function CalendarHeader<TDate>(props: CalendarHeaderProps<TDate>) {
   );
 }
 
-CalendarHeader.displayName = 'PickersCalendarHeader';
 
 CalendarHeader.propTypes = {
   leftArrowButtonText: PropTypes.string,
