@@ -14,14 +14,14 @@ import { WrapperVariantContext } from '../wrappers/WrapperVariantContext';
 import { MobileKeyboardInputView } from '../views/MobileKeyboardInputView';
 import { DateRangePickerInput, DateRangeInputProps } from './DateRangePickerInput';
 import { RangeInput, DateRange, CurrentlySelectingRangeEndProps } from './RangeTypes';
-import { ExportedCalendarViewProps, defaultReduceAnimations } from '../views/Calendar/CalendarView';
+import { ExportedDayPickerProps, defaultReduceAnimations } from '../views/DayPicker/DayPicker';
 import {
   DateRangePickerViewDesktop,
   ExportedDesktopDateRangeCalendarProps,
 } from './DateRangePickerViewDesktop';
 
 type BaseCalendarPropsToReuse<TDate> = Omit<
-  ExportedCalendarViewProps<TDate>,
+  ExportedDayPickerProps<TDate>,
   'onYearChange' | 'renderDay'
 >;
 

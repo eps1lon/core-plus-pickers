@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { CalendarViewProps } from './CalendarView';
+import type { DayPickerProps } from './DayPicker';
 import type { SlideDirection } from './SlideTransition';
 import { validateDate } from '../internal/pickers/_helpers/date-utils';
 import { MuiPickersAdapter, useUtils, useNow } from '../internal/pickers/_shared/hooks/useUtils';
@@ -65,7 +65,7 @@ export const createCalendarStateReducer = <TDate extends unknown>(
 };
 
 type CalendarStateInput<TDate> = Pick<
-  CalendarViewProps<TDate>,
+  DayPickerProps<TDate>,
   | 'disableFuture'
   | 'disablePast'
   | 'shouldDisableDate'

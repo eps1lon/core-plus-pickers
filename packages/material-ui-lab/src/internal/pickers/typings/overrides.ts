@@ -3,19 +3,19 @@ import { StyleRules, StyleRulesCallback } from '@material-ui/core/styles/withSty
 import { useStyles as DayStyles } from '../../../PickerDay/Day';
 import { useStyles as ClockStyles } from '../../../Clock/Clock';
 import { useStyles as MuiBasePickerStyles } from '../Picker/Picker';
-import { useStyles as CalendarStyles } from '../../../Calendar/Calendar';
+import { useStyles as CalendarStyles } from '../../../DayPicker/Calendar';
 import { useStyles as MuiPickersYearStyles } from '../../../YearPicker/Year';
 import { styles as ClockPointerStyles } from '../../../Clock/ClockPointer';
 import { useStyles as ToolbarButtonStyles } from '../_shared/ToolbarButton';
 import { useStyles as PickerToolbarStyles } from '../_shared/PickerToolbar';
 import { useStyles as ClockNumberStyles } from '../../../Clock/ClockNumber';
 import { useStyles as MuiPickersMonthStyles } from '../../../MonthPicker/Month';
-import { useStyles as CalendarViewStyles } from '../../../Calendar/CalendarView';
+import { useStyles as CalendarViewStyles } from '../../../DayPicker/DayPicker';
 import { useStyles as MuiPickersToolbarTextStyles } from '../_shared/ToolbarText';
 import { useStyles as DatePickerRootStyles } from '../../../DatePicker/DatePickerToolbar';
-import { useStyles as CalendarHeaderStyles } from '../../../Calendar/CalendarHeader';
+import { useStyles as CalendarHeaderStyles } from '../../../DayPicker/CalendarHeader';
 import { useStyles as TimePickerToolbarStyles } from '../../../TimePicker/TimePickerToolbar';
-import { useStyles as SlideTransitionStyles } from '../../../Calendar/SlideTransition';
+import { useStyles as SlideTransitionStyles } from '../../../DayPicker/SlideTransition';
 import { useStyles as MuiPickersYearSelectionStyles } from '../../../YearPicker/YearPicker';
 import { useStyles as MuiPickersMonthSelectionStyles } from '../../../MonthPicker/MonthPicker';
 
@@ -57,14 +57,7 @@ export interface MuiPickersComponentsToClassName {
   MuiDateTimePickerToolbar: Classes<
     typeof import('../../../DateTimePicker/DateTimePickerToolbar').useStyles
   >;
-  // consider using inline import type notation
-  MuiPickersDesktopDateRangeCalendar: Classes<
-    typeof import('../../../DateRangePicker/DateRangePickerViewDesktop').useStyles
-  >;
   MuiPickersArrowSwitcher: Classes<typeof import('../_shared/ArrowSwitcher').useStyles>;
-  MuiPickersDateRangePickerInput: Classes<
-    typeof import('../../../DateRangePicker/DateRangePickerInput').useStyles
-  >;
   MuiPickersCalendarSkeleton: Classes<
     typeof import('../../../CalendarSkeleton/CalendarSkeleton').useStyles
   >;

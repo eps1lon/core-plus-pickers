@@ -8,7 +8,7 @@ import { DatePicker } from '@material-ui/pickers';
 import { TimePicker } from '../../TimePicker';
 import { ClockView } from '../../views/Clock/ClockView';
 import { DateRangePicker } from '../../DateRangePicker/DateRangePicker';
-import { CalendarView } from '../../views/Calendar/CalendarView';
+import { CalendarView } from '../../views/DayPicker/DayPicker';
 import { Day } from '../../views/Calendar/Day';
 import { DateTimePicker } from '../../DateTimePicker';
 

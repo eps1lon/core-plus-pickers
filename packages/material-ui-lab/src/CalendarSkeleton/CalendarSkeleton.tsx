@@ -2,9 +2,9 @@ import * as React from 'react';
 import clsx from 'clsx';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { makeStyles } from '@material-ui/core/styles';
-import { DAY_SIZE, DAY_MARGIN } from '../internal/constants/dimensions';
-import { withDefaultProps } from './_shared/withDefaultProps';
-import { useStyles as useCalendarStyles } from './views/Calendar/Calendar';
+import { DAY_SIZE, DAY_MARGIN } from '../internal/pickers/constants/dimensions';
+import { withDefaultProps } from '../internal/pickers/_shared/withDefaultProps';
+import { useStyles as useCalendarStyles } from '../DayPicker/Calendar';
 
 export interface CalendarSkeletonProps extends React.HTMLProps<HTMLDivElement> {}
 
@@ -49,7 +49,7 @@ export const CalendarSkeleton: React.FC<CalendarSkeletonProps> = withDefaultProp
             {week.map((day, index2) => (
               <Skeleton
                 key={index2}
-                variant="circle"
+                variant="circular"
                 width={DAY_SIZE}
                 height={DAY_SIZE}
                 className={clsx(classes.daySkeleton, {

@@ -114,33 +114,6 @@ export function parsePickerInputValue(
   return utils.isValid(parsedValue) ? parsedValue : null;
 }
 
-export function parseRangeInputValue(
-  utils: MuiPickersAdapter,
-  { value = [null, null] }: BasePickerProps<RangeInput, DateRange>,
-) {
-  return value.map((date) =>
-    !utils.isValid(date) || date === null ? null : utils.startOfDay(utils.date(date)),
-  ) as DateRange;
-}
-
-export const isRangeValid = (
-  utils: MuiPickersAdapter,
-  range: DateRange | null,
-): range is DateRange => {
-  return Boolean(range && range[0] && range[1] && utils.isBefore(range[0], range[1]));
-};
-
-export const isWithinRange = (utils: MuiPickersAdapter, day: unknown, range: DateRange | null) => {
-  return isRangeValid(utils, range) && utils.isWithinRange(day, range);
-};
-
-export const isStartOfRange = (utils: MuiPickersAdapter, day: unknown, range: DateRange | null) => {
-  return isRangeValid(utils, range) && utils.isSameDay(day, range[0]);
-};
-
-export const isEndOfRange = (utils: MuiPickersAdapter, day: unknown, range: DateRange | null) => {
-  return isRangeValid(utils, range) && utils.isSameDay(day, range[1]);
-};
 
 export interface DateValidationProps<TDate> {
   /**

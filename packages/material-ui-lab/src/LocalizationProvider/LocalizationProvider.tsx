@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { DateIOFormats } from '@date-io/core/IUtils';
-import { MuiPickersAdapter } from './_shared/hooks/useUtils';
+import type { MuiPickersAdapter } from '../internal/pickers/_shared/hooks/useUtils';
 
 export const MuiPickersAdapterContext = React.createContext<MuiPickersAdapter | null>(null);
 
@@ -17,7 +17,7 @@ const LocalizationProvider: React.FC<LocalizationProviderProps> = (props) => {
   const { children, dateAdapter: Utils, dateFormats, dateLibInstance, locale } = props;
   const utils = React.useMemo(
     () => new Utils({ locale, formats: dateFormats, instance: dateLibInstance }),
-    [Utils, locale, dateFormats, dateLibInstance]
+    [Utils, locale, dateFormats, dateLibInstance],
   );
 
   return (

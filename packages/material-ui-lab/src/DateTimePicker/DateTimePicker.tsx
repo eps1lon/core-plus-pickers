@@ -4,7 +4,7 @@ import { ExportedClockViewProps } from '../Clock/ClockView';
 import { ResponsiveWrapper } from '../internal/pickers/wrappers/ResponsiveWrapper';
 import { pick12hOr24hFormat } from '../internal/pickers/_helpers/text-field-helper';
 import { useParsedDate, OverrideParsableDateProps } from '../internal/pickers/_shared/hooks/date-helpers-hooks';
-import { ExportedCalendarViewProps } from '../Calendar/CalendarView';
+import type { ExportedDayPickerProps } from '../DayPicker/DayPicker';
 import { makePickerWithStateAndWrapper, SharedPickerProps } from '../internal/pickers/Picker/makePickerWithState';
 import { DesktopWrapper, MobileWrapper, StaticWrapper, SomeWrapper } from '../internal/pickers/wrappers/Wrapper';
 import { WithViewsProps, AllSharedPickerProps } from '../internal/pickers/Picker/SharedPickerProps';
@@ -16,7 +16,7 @@ export type DateTimePickerView = 'year' | 'date' | 'month' | 'hours' | 'minutes'
 
 type DateTimePickerViewsProps<TDate> = OverrideParsableDateProps<
   TDate,
-  ExportedClockViewProps<TDate> & ExportedCalendarViewProps<TDate>,
+  ExportedClockViewProps<TDate> & ExportedDayPickerProps<TDate>,
   'minDate' | 'maxDate' | 'minTime' | 'maxTime'
 >;
 

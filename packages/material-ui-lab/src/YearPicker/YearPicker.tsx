@@ -25,8 +25,8 @@ export interface YearPickerProps<TDate> extends ExportedYearSelectionProps<TDate
   allowKeyboardControl?: boolean;
   changeFocusedDay: (day: TDate) => void;
   date: TDate;
-  disableFuture?: boolean | null | undefined;
-  disablePast?: boolean | null | undefined;
+  disableFuture?: boolean | null;
+  disablePast?: boolean | null;
   isDateDisabled: (day: TDate) => boolean;
   maxDate: TDate;
   minDate: TDate;

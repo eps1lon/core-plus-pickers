@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PickerProps } from '../Picker/Picker';
 import { CalendarSkeletonProps } from '../CalendarSkeleton/CalendarSkeleton';
 import {

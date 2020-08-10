@@ -93,7 +93,7 @@ export const useStyles = makeStyles(
       },
     },
   }),
-  muiComponentConfig
+  muiComponentConfig,
 );
 
 export function Clock<TDate>(props: ClockProps<TDate>) {
@@ -138,12 +138,12 @@ export function Clock<TDate>(props: ClockProps<TDate>) {
       offsetY = e.changedTouches[0].clientY - rect.top;
     }
 
-    const value =
+    const timeValue =
       type === 'seconds' || type === 'minutes'
         ? getMinutes(offsetX, offsetY, minutesStep)
         : getHours(offsetX, offsetY, Boolean(ampm));
 
-    handleValueChange(value, isFinish);
+    handleValueChange(timeValue, isFinish);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -163,6 +163,7 @@ export function Clock<TDate>(props: ClockProps<TDate>) {
     e.stopPropagation();
     // MouseEvent.which is deprecated, but MouseEvent.buttons is not supported in Safari
     const isButtonPressed =
+      /* tslint:disable-next-line */
       typeof e.buttons === 'undefined' ? e.nativeEvent.which === 1 : e.buttons === 1;
 
     if (isButtonPressed) {
@@ -194,7 +195,7 @@ export function Clock<TDate>(props: ClockProps<TDate>) {
       [keycode.End]: () => handleValueChange(type === 'minutes' ? 59 : 23, 'partial'),
       [keycode.ArrowUp]: () => handleValueChange(value + keyboardControlStep, 'partial'),
       [keycode.ArrowDown]: () => handleValueChange(value - keyboardControlStep, 'partial'),
-    }
+    },
   );
 
   return (

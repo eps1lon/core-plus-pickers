@@ -5,7 +5,7 @@ import PickerToolbar from '../internal/pickers/_shared/PickerToolbar';
 import { ToolbarButton } from '../internal/pickers/_shared/ToolbarButton';
 import DateTimePickerTabs from './DateTimePickerTabs';
 import { useUtils } from '../internal/pickers/_shared/hooks/useUtils';
-import { DateTimePickerView } from './DateTimePicker';
+import type { DateTimePickerView } from './DateTimePicker';
 import { withDefaultProps } from '../internal/pickers/_shared/withDefaultProps';
 import { ToolbarComponentProps } from '../internal/pickers/Picker/SharedPickerProps';
 import { WrapperVariantContext } from '../internal/pickers/wrappers/WrapperVariantContext';

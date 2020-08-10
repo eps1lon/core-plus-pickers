@@ -37,7 +37,7 @@ export interface CalendarViewProps<TDate>
   onMonthChange?: (date: TDate) => void;
 }
 
-export type ExportedCalendarViewProps<TDate> = Omit<
+export type ExportedDayPickerProps<TDate> = Omit<
   CalendarViewProps<TDate>,
   'date' | 'view' | 'views' | 'onChange' | 'changeView' | 'slideDirection' | 'currentMonth'
 >;

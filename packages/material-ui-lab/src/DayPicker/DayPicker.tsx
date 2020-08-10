@@ -16,7 +16,7 @@ import { IsStaticVariantContext } from '../internal/pickers/wrappers/WrapperVari
 import { findClosestEnabledDate } from '../internal/pickers/_helpers/date-utils';
 import type { DateValidationProps } from '../internal/pickers/_helpers/date-utils';
 
-export interface CalendarViewProps<TDate>
+export interface DayPickerProps<TDate>
   extends DateValidationProps<TDate>,
     ExportedCalendarProps<TDate>,
     ExportedYearSelectionProps<TDate>,
@@ -38,12 +38,12 @@ export interface CalendarViewProps<TDate>
   onMonthChange?: (date: TDate) => void;
 }
 
-export type ExportedCalendarViewProps<TDate> = Omit<
-  CalendarViewProps<TDate>,
+export type ExportedDayPickerProps<TDate> = Omit<
+  DayPickerProps<TDate>,
   'date' | 'view' | 'views' | 'onChange' | 'changeView' | 'slideDirection' | 'currentMonth'
 >;
 
-const muiComponentConfig = { name: 'MuiPickersCalendarView' };
+const muiComponentConfig = { name: 'MuiDayPicker' };
 
 export const useStyles = makeStyles(
   {
@@ -65,7 +65,7 @@ export const useStyles = makeStyles(
 export const defaultReduceAnimations =
   typeof navigator !== 'undefined' && /(android)/i.test(navigator.userAgent);
 
-export function CalendarView<TDate>(props: CalendarViewProps<TDate>) {
+export function DayPicker<TDate>(props: DayPickerProps<TDate>) {
   const {
     allowKeyboardControl: allowKeyboardControlProp,
     changeView,
@@ -199,4 +199,4 @@ export function CalendarView<TDate>(props: CalendarViewProps<TDate>) {
   );
 }
 
-export default CalendarView;
+export default DayPicker;

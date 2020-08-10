@@ -6,7 +6,7 @@ import type { ExportedClockViewProps } from '../../../Clock/ClockView';
 import type { WithDateAdapterProps } from '../_shared/withDateAdapterProp';
 import type { PickerSelectionState } from '../_shared/hooks/usePickerState';
 import type { DateInputPropsLike, WrapperVariant } from '../wrappers/Wrapper';
-import type { ExportedCalendarViewProps } from '../../../Calendar/CalendarView';
+import type { ExportedDayPickerProps } from '../../../DayPicker/DayPicker';
 
 export type AnyPickerView = DateTimePickerView;
 
@@ -44,7 +44,7 @@ export interface WithViewsProps<T extends AnyPickerView> {
   openTo?: T;
 }
 
-export type CalendarAndClockProps<TDate> = ExportedCalendarViewProps<TDate> &
+export type CalendarAndClockProps<TDate> = ExportedDayPickerProps<TDate> &
   ExportedClockViewProps<TDate>;
 
 export type ToolbarComponentProps<

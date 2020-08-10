@@ -6,7 +6,7 @@ import {
   useParsedDate,
   OverrideParsableDateProps,
 } from '../internal/pickers/_shared/hooks/date-helpers-hooks';
-import type { ExportedCalendarViewProps } from '../Calendar/CalendarView';
+import type { ExportedDayPickerProps } from '../DayPicker/DayPicker';
 import {
   MobileWrapper,
   DesktopWrapper,
@@ -22,19 +22,19 @@ import {
   defaultMinDate,
   defaultMaxDate,
 } from '../internal/pickers/constants/prop-types';
-import { makePickerWithStateAndWrapper }  from '../internal/pickers/Picker/makePickerWithState';
 import {
   getFormatAndMaskByViews,
   DateValidationError,
   validateDate,
 } from '../internal/pickers/_helpers/date-utils';
+import { makePickerWithStateAndWrapper, SharedPickerProps, AllPickerProps } from '../internal/pickers/Picker/makePickerWithState';
 
 export type DatePickerView = 'year' | 'date' | 'month';
 
 export interface BaseDatePickerProps<TDate>
   extends WithViewsProps<'year' | 'date' | 'month'>,
     ValidationProps<DateValidationError, ParsableDate>,
-    OverrideParsableDateProps<TDate, ExportedCalendarViewProps<TDate>, 'minDate' | 'maxDate'> {}
+    OverrideParsableDateProps<TDate, ExportedDayPickerProps<TDate>, 'minDate' | 'maxDate'> {}
 
 const datePickerConfig = {
   useValidation: makeValidationHook<

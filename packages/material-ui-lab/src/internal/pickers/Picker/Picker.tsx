@@ -6,7 +6,7 @@ import { ClockView } from '../../../Clock/ClockView';
 import type { DateTimePickerView } from '../../../DateTimePicker';
 import { BasePickerProps } from '../typings/BasePicker';
 import type { DatePickerView } from '../../../DatePicker/DatePicker';
-import { CalendarView } from '../../../Calendar/CalendarView';
+import { CalendarView } from '../../../DayPicker/DayPicker';
 import { withDefaultProps } from '../_shared/withDefaultProps';
 import { KeyboardDateInput } from '../_shared/KeyboardDateInput';
 import { useIsLandscape } from '../_shared/hooks/useIsLandscape';
