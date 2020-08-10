@@ -35,7 +35,7 @@ export interface ExportedCalendarProps<TDate>
    */
   allowKeyboardControl?: boolean;
   /**
-   * If `true` renders `LoadingComponent` in calendar instead of calendar view.
+   * If `true`, renders `LoadingComponent` in calendar instead of calendar view.
    * Can be used to preload information and show it in calendar.
    *
    * @default false
