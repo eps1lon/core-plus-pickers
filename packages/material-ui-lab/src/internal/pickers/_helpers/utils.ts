@@ -50,6 +50,7 @@ export function createDelegatedEventHandler<TEvent>(
   };
 }
 
+// TODO replace with useForkRef
 export function mergeRefs<T>(refs: (React.Ref<T | null> | undefined)[]) {
   return (value: T) => {
     refs.forEach((ref) => {
