@@ -67,6 +67,7 @@ const muiComponentConfig = { name: 'MuiPickersCalendar' };
 export const useStyles = makeStyles((theme) => {
   const weeksContainerHeight = (DAY_SIZE + DAY_MARGIN * 4) * 6;
   return {
+    /* Styles applied to the root element. */
     root: {
       minHeight: weeksContainerHeight,
     },

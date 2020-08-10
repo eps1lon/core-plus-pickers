@@ -1,3 +1,4 @@
+// TODO remove `dateAdapter` prop support
 import * as React from 'react';
 import { MuiPickersAdapter } from './hooks/useUtils';
 import { MuiPickersAdapterContext } from '../../../LocalizationProvider/LocalizationProvider';

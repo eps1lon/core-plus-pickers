@@ -157,7 +157,6 @@ function Picker({
                 {...other}
               />
             )}
-
             {(openView === 'hours' || openView === 'minutes' || openView === 'seconds') && (
               <ClockView
                 {...other}
